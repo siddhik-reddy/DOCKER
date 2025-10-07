@@ -1,6 +1,7 @@
 FROM node:18-alpine
-WORKDIR /DOCKER
+RUN npm install -g nodemon
+WORKDIR /VOLUMES
 COPY . .
 RUN npm install
-EXPOSE 4000
-CMD ["node", "index.js"]
+EXPOSE 4001
+CMD ["npm", "run", "dev"]
